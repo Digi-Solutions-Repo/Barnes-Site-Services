@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Barnes Site Services – Wilmington NC's trusted demolition and site prep contractor. Full demolition, site preparation, and debris removal for residential and commercial projects.">
+    <meta name="keywords" content="demolition Wilmington NC, site prep, debris removal, heavy equipment contractor, teardown contractor">
+    <title>Barnes Site Services - Wilmington's Heavy Hitters</title>
+    <link rel="canonical" href="https://barnessiteservices.com/">
+    <style>
+        :root {
+            --primary-gold: #DA5917;
+            --primary-dark: #22310D;
+            --light-cream: #EDFEE2;
+            --gray: #6A6A5E;
+            --white: #FFFFFF;
+            --black: #000000;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: var(--primary-dark);
+        }
+
+        /* Header */
+        header {
+            background: var(--white);
+            padding: 1rem 2rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            height: 60px;
+            width: auto;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--primary-dark);
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-gold);
+        }
+
+        .book-now {
+            background: var(--primary-gold);
+            color: var(--white);
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+
+        .book-now:hover {
+            background: var(--primary-dark);
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 4px;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: var(--primary-dark);
+            transition: 0.3s;
+        }
+
+        /* Hero */
+        .hero {
+            background-image: url('img/barnes-05-ultrawide.png');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: var(--white);
+            position: relative;
+            margin-top: 80px;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            padding: 0 2rem;
+        }
+
+        .tagline {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+        }
+
+        /* Sections */
+        section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--primary-gold);
+        }
+
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: var(--light-cream);
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .service-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+        }
+
+        /* Gallery */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        /* Contact Form */
+        .contact-form {
+            background: var(--light-cream);
+            padding: 3rem;
+            border-radius: 10px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid var(--gray);
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .submit-btn {
+            background: var(--primary-gold);
+            color: var(--white);
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary-dark);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem;
+        }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background: var(--white);
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: center;
+                padding-top: 2rem;
+                transition: 0.3s;
+            }
+
+            .nav-links.active {
+                left: 0;
+            }
+
+            .tagline {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1.2rem;
+            }
+
+            section {
+                padding: 3rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav role="navigation">
+            <img src="img/Barnes-Logo-Bulldozer.png" alt="Barnes Site Services Logo" class="logo">
+            <ul class="nav-links" aria-label="Main navigation">
+                <li><a href="about.html">About</a></li>
+                <li><a href="service-areas.html">Service Areas</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="tel:+19018075640" class="book-now">Book Now</a></li>
+            </ul>
+            <button class="hamburger" aria-label="Toggle navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="tagline">Barnes Site Services – Wilmington's Heavy Hitters</h1>
+            <p>Expert demolition and site services in Wilmington, NC. From full teardowns to site prep, Barnes Site Services handles heavy‑duty jobs with precision, safety, and speed.</p>
+        </div>
+    </section>
+
+    <section id="services">
+        <h2>Our Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <img src="img/barnes-01.png" alt="Demolition">
+                <h3>Demolition</h3>
+                <p>Safe and efficient demolition for residential, commercial, and industrial sites. Licensed and insured for all your teardown needs.</p>
+            </div>
+            <div class="service-card">
+                <img src="img/barnes-02.png" alt="Site Preparation">
+                <h3>Site Preparation</h3>
+                <p>Grading, excavation, and clearing to prep your site for construction. Heavy equipment and experienced crews.</p>
+            </div>
+            <div class="service-card">
+                <img src="img/barnes-03.png" alt="Debris Removal">
+                <h3>Debris Removal</h3>
+                <p>Quick cleanup and haul‑away of construction debris, concrete, and more. Keep your site clean and compliant.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery">
+        <h2>Our Work</h2>
+        <div class="gallery">
+            <img src="img/barnes-04.png" alt="Project 1">
+            <img src="img/barnes-05-ultrawide.png" alt="Project 2">
+            <img src="img/barnes-01.png" alt="Project 3">
+            <img src="img/barnes-02.png" alt="Project 4">
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Get a Quote</h2>
+        <form class="contact-form" action="process-form.php" method="post">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Project Details</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="submit-btn">Send Message</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Barnes Site Services. All rights reserved. | Powered by <a href="https://digi-solutions.com" style="color: var(--primary-gold);">Digi Solutions</a></p>
+        <p>Wilmington, NC | <a href="tel:+19018075640" style="color: var(--white);">Call: (901) 807‑5640</a></p>
+    </footer>
+
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Close mobile menu on link click
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>
